@@ -9,7 +9,6 @@ class Post(models.Model):
     link = models.URLField()
     image = models.URLField()
     website_name = models.CharField(max_length=100)
-    guid = models.CharField(max_length=50)
 
     def __str__(self) -> str:
         return f"{self.website_name}: {self.title}"

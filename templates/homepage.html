@@ -28,21 +28,21 @@
     <main class="container flex-grow-1">
       <div class="row">
         <div class="col">
-          {% for episode in episodes %}
+          {% for post in posts %}
           <section class="card mb-3">
             <div class="row no-gutters">
               <div class="col-md-2 my-auto">
                 <img
-                  src="{{ episode.image }}"
+                  src="{{ post.image }}"
                   class="img-fluid ml-3 my-3"
-                  alt="{{ episode.podcast_name }}"
+                  alt="{{ post.website_name }}"
                 />
               </div>
               <div class="col-md-10">
                 <div class="card-body ml-3">
-                  <h3 class="card-title">{{ episode.title }}</h3>
-                  <p class="card-text">{{ episode.description }}</p>
-                  <a href="{{ episode.link }}">
+                  <h3 class="card-title">{{ post.title }}</h3>
+                  <p class="card-text">{{ post.description }}</p>
+                  <a href="{{ post.link }}">
                     <p class="card-text">🎧 Listen to this episode</p>
                   </a>
                 </div>
