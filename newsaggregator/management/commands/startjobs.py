@@ -28,10 +28,10 @@ def save_new_posts(feed):
         feed: requires a feedparser object
     """
     post_title = feed.channel.title
-    #post_image = feed.channel.image["href"]
+    #post_image = feed.channel.icon["href"]
 
     for entry in feed.entries:
-        #if not Post.objects.filter().exists():
+        if not Post.objects.filter(post_id=entry.id).exists():
             post = Post(
                 title=entry.title,
                 description=entry.description,
@@ -39,6 +39,7 @@ def save_new_posts(feed):
                 link=entry.link,
                 #image=post_image,
                 website_name=post_title,
+                post_id=entry.id,
             )
             post.save()
 
